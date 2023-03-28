@@ -5,13 +5,18 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
+
     [SerializeField]
     Image _loadbar;
 
-    public void StartGame()
-    {
+    public void StartGame( Button button)
+    { 
         SceneLoader(1);
+
+        button.GetComponent<GameObject>().SetActive(false);
+
     }
+
     public void EndGame()
     {
         SceneLoader(0);

@@ -209,7 +209,7 @@ SubShader {
             output.atlas = input.texcoord0;
             output.weight = weight;
             output.mask = half2(vert.xy * 2 - clampedRect.xy - clampedRect.zw);
-            output.viewDir = mul((float3x3)_EnvMatrix, _WorldSpaceCameraPos.xyz - mul(unity_ObjectToWorld, vert).xyz);
+            output.viewDir = mul((float3x3)_EnvMatrix, _WorldSpacecamPos.xyz - mul(unity_ObjectToWorld, vert).xyz);
         #if (UNDERLAY_ON || UNDERLAY_INNER)
             output.texcoord2 = input.texcoord0 + bOffset;
             output.underlayColor = underlayColor;

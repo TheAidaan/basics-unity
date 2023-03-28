@@ -15,6 +15,7 @@ public class CubeMovement : MonoBehaviour
 
 
     Rigidbody _rb;
+    Renderer _rend;
     Material _mat;
     Vector3 _movementDir;
 
@@ -22,13 +23,16 @@ public class CubeMovement : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-       _mat = GetComponent<Renderer>().material;
+        _rend = GetComponent<Renderer>();
+        _mat = _rend.material;
     }
 
     private void FixedUpdate()
     {
         _moveSpeed = Mathf.Max(_moveSpeed, 0f);
         _rb.velocity = _movementDir.normalized * _moveSpeed; // move in the direction the player wants at a set speed
+
+        ScreenWrap();
 
     }
 
@@ -77,4 +81,41 @@ public class CubeMovement : MonoBehaviour
 
         }
     }
+
+    void ScreenWrap()
+    {
+        Vector3 newPos = transform.position;
+
+        if (!_rend.isVisible)
+        {
+            // Get the position of the camera in world space
+            Vector3 camPos = Camera.main.transform.position;
+
+            // Get the width and height of the screen
+            float camHalfWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
+            float camHalfHeight = Camera.main.orthographicSize;
+
+            // Wrap the position of the game object around the screen
+            if (newPos.y > camPos.y + camHalfHeight)
+            {
+                newPos.y = camPos.y - camHalfHeight;
+            }
+            else if (newPos.y < camPos.y - camHalfHeight)
+            {
+                newPos.y = camPos.y + camHalfHeight;
+            }
+
+            if (newPos.x > camPos.x + camHalfWidth)
+            {
+                newPos.x = camPos.x - camHalfWidth;
+            }
+            else if (newPos.x < camPos.x - camHalfWidth)
+            {
+                newPos.x = camPos.x + camHalfWidth;
+            }
+        }
+
+        transform.position = newPos;
+    }
 }
+

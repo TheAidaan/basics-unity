@@ -1,16 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    Image _loadbar;
+
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneLoader(1);
     }
     public void EndGame()
     {
-        SceneManager.LoadScene(0);
+        SceneLoader(0);
+    }
+    
+    void SceneLoader(int SceneIndex)
+    {
+        StartCoroutine(LoadScreenControl(SceneIndex));
+    }
+
+    IEnumerator LoadScreenControl(int SceneIndex)
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(SceneIndex);
+        while (!op.isDone)
+        {
+           ;
+            _loadbar.rectTransform.localScale = new Vector3(op.progress, 0.1f,1);
+            Debug.Log(op.progress);
+            yield return null;
+        }
     }
 }

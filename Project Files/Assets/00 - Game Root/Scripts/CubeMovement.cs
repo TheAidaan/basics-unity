@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
 {
-    const float MOVE_SPEED = 0.9f;
+    float _moveSpeed= 1f;
 
     Color32 _yellow = new Color32(176,169,0,255);
     Color32 _green = new Color32(15,186,0,255);
@@ -27,7 +27,8 @@ public class CubeMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.velocity = _movementDir.normalized * MOVE_SPEED; // move in the direction the player wants at a set speed
+        _moveSpeed = Mathf.Max(_moveSpeed, 0f);
+        _rb.velocity = _movementDir.normalized * _moveSpeed; // move in the direction the player wants at a set speed
 
     }
 
@@ -62,6 +63,17 @@ public class CubeMovement : MonoBehaviour
         {
             _movementDir.x += 1f;
             _mat.color = _purple;
+
+        } 
+        
+        if (Input.GetKey(KeyCode.Q))
+        {
+            _moveSpeed-=.5f;
+
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            _moveSpeed+=.5f;
 
         }
     }

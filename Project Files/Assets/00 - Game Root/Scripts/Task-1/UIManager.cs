@@ -6,13 +6,25 @@ using System.Collections;
 public class UIManager : MonoBehaviour
 {
     GameObject _loadingPanel;
+
+    bool _isVisible=false;
     private void Awake()
     {
         _loadingPanel = Resources.Load<GameObject>("Prefabs/pnlLoading");
 
     }
 
-
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                gameObject.GetComponent<Canvas>().enabled = _isVisible;
+                _isVisible = !_isVisible;
+            }
+        }
+    }
     public void StartGame( Button button)
     { 
         SceneLoader(1);

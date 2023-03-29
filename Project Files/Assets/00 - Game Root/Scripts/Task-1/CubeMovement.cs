@@ -19,12 +19,16 @@ public class CubeMovement : MonoBehaviour
     Material _mat;
     Vector3 _movementDir;
 
+    DisplayVelocity _displayVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _rend = GetComponent<Renderer>();
         _mat = _rend.material;
+
+        _displayVelocity = FindObjectOfType<DisplayVelocity>();
     }
 
     private void FixedUpdate()
@@ -70,14 +74,16 @@ public class CubeMovement : MonoBehaviour
 
         } 
         
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             _moveSpeed-=.5f;
-
+            _displayVelocity.UpdateText(_moveSpeed);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             _moveSpeed+=.5f;
+            _displayVelocity.UpdateText(_moveSpeed);
+
 
         }
     }

@@ -5,6 +5,14 @@ using UnityEngine.Networking;
 using System.Net;
 using System.IO;
 
+public class CityWeatherData
+{
+    public string cityName;
+    public float temperature;
+    public string description;
+
+
+}
 public class APIController : MonoBehaviour
 {
     const string API_KEY = "31a1cc504ab5b8d50240e5512cbf4c00";

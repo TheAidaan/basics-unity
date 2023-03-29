@@ -347,11 +347,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/00 - Game Root/Scripts/Task-1/CubeMovement.cs"
+"Assets/00 - Game Root/Scripts/Task-1/DisplayVelocity.cs"
 "Assets/00 - Game Root/Scripts/Task-1/LoadingPanelController.cs"
 "Assets/00 - Game Root/Scripts/Task-1/UIManager.cs"
 "Assets/00 - Game Root/Scripts/Task-2/APIController.cs"
 "Assets/00 - Game Root/Scripts/Task-2/DisplayWeatherData.cs"
-"Assets/00 - Game Root/Scripts/Task-2/Seriel.cs"
+"Assets/00 - Game Root/Scripts/Task-2/Serializable Fields.cs"
 -langversion:9.0
 
 /deterministic

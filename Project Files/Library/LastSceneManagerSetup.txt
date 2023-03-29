@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/00 - Game Root/Scenes/Task-1/Level One.unity
+- path: Assets/00 - Game Root/Scenes/Task-2/WeatherApp.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

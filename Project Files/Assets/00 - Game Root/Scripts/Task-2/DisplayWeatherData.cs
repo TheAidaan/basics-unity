@@ -13,8 +13,9 @@ public class DisplayWeatherData : MonoBehaviour
             _txtData.Add(child);
 
         _txtData[0].SetText(_txtData[0].text + data.cityName);
-        _txtData[1].SetText(_txtData[1].text + data.temperature);
-        _txtData[2].SetText(_txtData[2].text + data.description);
+
+        _txtData[1].SetText(_txtData[1].text + data.temperature.ToString("f0"));
+        _txtData[2].SetText(_txtData[2].text + char.ToUpper(data.description[0]) + data.description.Substring(1) );
         
     }
 }

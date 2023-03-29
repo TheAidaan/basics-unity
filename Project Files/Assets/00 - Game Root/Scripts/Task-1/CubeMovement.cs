@@ -17,11 +17,11 @@ public class CubeMovement : MonoBehaviour
     Rigidbody _rb;
     Renderer _rend;
     Material _mat;
+
     Vector3 _movementDir;
 
     DisplayVelocity _displayVelocity;
 
-    // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -34,13 +34,12 @@ public class CubeMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _moveSpeed = Mathf.Max(_moveSpeed, 0f);
-        _rb.velocity = _movementDir.normalized * _moveSpeed; // move in the direction the player wants at a set speed
+        _rb.velocity = _movementDir.normalized * _moveSpeed; 
 
         ScreenWrap();
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         _movementDir = Vector2.zero;
@@ -94,14 +93,11 @@ public class CubeMovement : MonoBehaviour
 
         if (!_rend.isVisible)
         {
-            // Get the position of the camera in world space
             Vector3 camPos = Camera.main.transform.position;
 
-            // Get the width and height of the screen
             float camHalfWidth = Camera.main.orthographicSize * Screen.width / Screen.height;
             float camHalfHeight = Camera.main.orthographicSize;
 
-            // Wrap the position of the game object around the screen
             if (newPos.y > camPos.y + camHalfHeight)
             {
                 newPos.y = camPos.y - camHalfHeight;

@@ -48,7 +48,7 @@ public class APIController : MonoBehaviour
 
     IEnumerator GetWeatherData(string cityName)
     {
-        string url = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + API_KEY;
+        string url = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName + "&appid=" + API_KEY + "&units=metric";
 
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {

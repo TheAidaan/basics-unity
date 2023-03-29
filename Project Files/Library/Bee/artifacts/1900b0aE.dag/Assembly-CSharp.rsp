@@ -322,6 +322,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.19f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"D:/Aidan/Documents/JobHunt/zutari-unity-2023-aidan-keown/Project Files/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"D:/Aidan/Documents/JobHunt/zutari-unity-2023-aidan-keown/Project Files/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
@@ -345,8 +346,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/00 - Game Root/Scripts/CubeMovement.cs"
-"Assets/00 - Game Root/Scripts/UIManager.cs"
+"Assets/00 - Game Root/Scripts/Task-1/CubeMovement.cs"
+"Assets/00 - Game Root/Scripts/Task-1/LoadingPanelController.cs"
+"Assets/00 - Game Root/Scripts/Task-1/UIManager.cs"
+"Assets/00 - Game Root/Scripts/Task-2/APIController.cs"
+"Assets/00 - Game Root/Scripts/Task-2/DisplayWeatherData.cs"
+"Assets/00 - Game Root/Scripts/Task-2/Seriel.cs"
 -langversion:9.0
 
 /deterministic
